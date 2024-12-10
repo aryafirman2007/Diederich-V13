@@ -35,32 +35,13 @@ let handler = async (m, { conn }) => {
     proto.Message.fromObject({
       viewOnceMessage: {
         message: {
-          messageContextInfo: {
-            deviceListMetadata: {},
-            deviceListMetadataVersion: 2,
+          imageMessage: {
+            ...media.imageMessage,
           },
-          interactiveMessage: proto.Message.InteractiveMessage.create({
-            body: proto.Message.InteractiveMessage.Body.create({
-              text: "Nih bancol",
-            }),
-            footer: proto.Message.InteractiveMessage.Footer.create({
-              text: "Furry NSFW Video",
-            }),
-            header: proto.Message.InteractiveMessage.Header.create({
-              hasMediaAttachment: false,
-              ...media,
-            }),
-            nativeFlowMessage:
-              proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                buttons: [
-                  {
-                    name: "quick_reply",
-                    buttonParamsJson: '{"display_text":"Next","id":".bokep"}',
-                  },
-                ],
-              }),
-          }),
-        },
+          videoMessage: {
+            ...media.videoMessage,
+          }
+        }
       },
     }),
     { quoted: m },

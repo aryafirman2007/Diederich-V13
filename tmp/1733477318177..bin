@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Some Random Api &bull; Home</title>
+    <meta name="description"
+        content="Some Random Api is a place where you can find a lot of random apis from games, sites, even animal facts!" />
+    <meta property="og:title" content="Some Random Api &bullet; Home" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description"
+        content="Some Random Api is a place where you can find a lot of random apis from games, sites, even animal facts!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="../..//Users/kaidellmann/Projekte/SEO Clones/some-random-api.ml/input/sd/i/logo.png/index.html" />
+    <meta property="keywords"
+        content="api, some-random-api, some random api, discord bot, discord bot api, animal api, image api, canvas api" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../..//Users/kaidellmann/Projekte/SEO Clones/some-random-api.ml/input/sd/i/logo.png/index.html">
+   
+</head>
+
+<body class="has-navbar-fixed-top">
+    <div class="header big">
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://some-random-api.ml">
+            <img src="../..//Users/kaidellmann/Projekte/SEO Clones/some-random-api.ml/input/sd/i/logo.png/index.html" width="28" height="28">
+            <a class="navbar-item has-text-weight-semibold" style="margin-left: -15px;">Some Random Api</a>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="nav" class="navbar-menu">
+        <div class="navbar-start">
+
+        </div>
+
+        <div class="navbar-end">
+            <a class="navbar-item" href="/">
+                Home
+            </a>
+            <a class="navbar-item" href="/endpoints">
+                Endpoints
+            </a>
+            <a class="navbar-item" href="/docs">
+                Documentation
+            </a>
+            <a class="navbar-item" href="/discord">
+                Discord
+            </a>
+            
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a style="color: white;" class="button border" onclick="window.location.href = `/login?redirect=${encodeURIComponent(btoa(window.location.pathname))}`">
+                            Log in
+                        </a>
+                    </div>
+                </div>
+                
+                    </div>
+        </div>
+</nav>
+
+<script src="/client.js"></script>
+            <div class="grid">
+                <div class="text">
+                    <h1 class="title is-1">Some Random Api</h1>
+                    <h2 class="subtitl    float: left;
+                    <div class=" buttons">
+                        <a class="button is-link is-light" href="/endpoints">List of Endpoints</a>
+                        <a class="button is-link is-light" href="/discord">Discord</a>
+                </div>
+            <div class="img large">
+                <pre id="fancy-code" class="code"><span class="keyword">const</span> { <span class="variable">MessageEmbed</span>, <span class="variable">MessageAttachment</span> } = <span class="func">require</span>(<span class="string">'discord.js'</span>)
+<span class="keyword">let</span> <span class="variable">link</span> = <span class="string">'https://some-random-api.ml/canvas/triggered/?avatar=https://....com'</span>
+<span class="keyword">const</span> <span class="variable">attachment</span> = <span class="keyword">new</span> <span class="func">MessageAttachment</span>(link, <span class="string">'triggered.gif'</span>)
+<span class="keyword">const</span> <span class="variable">embed</span> = <span class="keyword">new</span> <span class="func">MessageEmbed</span>()
+    .<span class="func">setTitle</span>(<span class="string">'Triggered'</span>)
+    .<span class="func">attachFiles</span>(attachment)
+    .<span class="func">setImage</span>(<span class="string">'attachment://triggered.gif'</span>)
+message.channel.<span class="func">send</span>(embed) 
+<span class="comment">//Try necros vsc theme kthx</span></pre>
+            </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="grid-1">
+            <h1 class="title is-2">Blog</h1>
+            
+            
+
+<article class="text my-6 post-3">
+    <h2 class="subtitle is-headline">APIs Limitless Gaming</h2>
+    
+    <p class="is-2"><p>In the digital world, APIs are indispensable tools that enable seamless interaction between different software applications. One such platform that offers a variety of APIs is Some Random api. With over 50 endpoints covering a wide range of services - from animal images and facts to image editing - this website offers developers and tech enthusiasts a wealth of options to explore and use.</p>
+<p>In the same way that we are revolutionizing the world of APIs, the german <a href="https://casinosohnelimit.net/">Casinos ohne Limit</a> Website is driving innovation in online gambling. This platform offers an extensive selection of online casinos that provide players with an unparalleled gaming experience. Imagine being able to access random facts during your gaming breaks or control your game images in a fun and unique way. Then COL is the right place for you to be.</p>
+</p>
+    
+</article>
+
+<article class="text my-6 post-34357">
+    <h2 class="subtitle is-headline">API update on Discord</h2>
+    
+    <p class="is-2"><p>We're excited to share some exciting news from our Discord server with the Some Random API community. Our team has introduced five new endpoints focused on data visualization and machine learning. These endpoints are the result of months of research and offer a variety of features, from text analytics to image recognition. They offer developers more flexibility and opportunities to expand and enhance their projects.</p>
+<p>Using the new endpoints is as easy as can be. All information is available on our website as well as on our Discord server. Our support team is available 24/7 to answer questions and help integrate the new features. We're excited about the innovative applications you'll be creating with it, and invite you to follow us on Discord to stay up to date.</p>
+</p>
+    
+</article>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="grid-2">
+            <div class="text">
+                <h1 class="title is-2">Easy to use API</h1>
+                <h2 class="subtitle">
+                    Using Some random api is as simple as opening a link in your browser! Even if you are stuck on how
+                    to use the API, our support team on discord will gladly help you.
+                </h2>
+            </div>
+            <div class="text">
+                <h1 class="title is-2">Variety</h1>
+                <h2 class="subtitle">
+                    Some random api has over 50 endpoints that you can use! Ranging from animal images, animal facts, to
+                    also image manipulation endpoints. Some random api is constantly getting updated with more
+                    endpoints!
+                </h2>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        function setupTypewriter(t) {
+            var HTML = t.innerHTML;
+            t.innerHTML = "";
+            var cursorPosition = 0,
+                tag = "",
+                writingTag = false,
+                tagOpen = false,
+                tempTypeSpeed = 0;
+            var type = function () {
+                if (writingTag === true) {
+                    tag += HTML[cursorPosition];
+                }
+                if (HTML[cursorPosition] === "<") {
+                    tempTypeSpeed = 0;
+                    if (tagOpen) {
+                        tagOpen = false;
+                        writingTag = true;
+                    } else {
+                        tag = "";
+                        tagOpen = true;
+                        writingTag = true;
+                        tag += HTML[cursorPosition];
+                    }
+                }
+                if (!writingTag && tagOpen) {
+                    tag.innerHTML += HTML[cursorPosition];
+                }
+                if (!writingTag && !tagOpen) {
+                    if (HTML[cursorPosition] === " ") {
+                        tempTypeSpeed = 0;
+                    } else {
+                        tempTypeSpeed = 25;
+                    }
+                    t.innerHTML += HTML[cursorPosition];
+                }
+                if (writingTag === true && HTML[cursorPosition] === ">") {
+                    tempTypeSpeed = 25;
+                    writingTag = false;
+                    if (tagOpen) {
+                        var newSpan = document.createElement("span");
+                        t.appendChild(newSpan);
+                        newSpan.innerHTML = tag;
+                        tag = newSpan.firstChild;
+                    }
+                }
+
+                cursorPosition += 1;
+                if (cursorPosition < HTML.length - 1) {
+                    setTimeout(type, tempTypeSpeed);
+                }
+
+            };
+
+            return {
+                type: type
+            };
+        }
+
+        var code = document.getElementById('fancy-code');
+
+        code = setupTypewriter(code);
+
+        code.type();
+    </script>
+    <footer class="page-footer">
+  <a class="copyright" style="color: #ffffff;">© 2018-2022 Some Random Api</a>
+</footer>
+</body>
+
+
+</html>
