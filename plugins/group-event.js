@@ -18,7 +18,7 @@ export async function handler(m, { text, args, usedPrefix, command }) {
         degreesLongitude: 0,
         name: evtLocation || 'Indonesia'
       },
-      joinLink: evtLink || 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ',
+      joinLink: evtLink || 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH',
       startTime: new Date() * 86400000
     }
   }, {});

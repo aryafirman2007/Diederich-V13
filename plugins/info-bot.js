@@ -47,7 +47,7 @@ await conn.sendMessage(m.chat, {
                     forwardingScore: 2023,
                     title: 'ɪ ɴ ғ ᴏ  ᴅ ɪ ᴇ ᴅ ᴇ ʀ ɪ ᴄ ʜ',
                     thumbnailUrl: 'https://files.catbox.moe/fiko6g.jpg',
-                    sourceUrl: 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ',
+                    sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH',
                     mediaType: 1,
                     renderLargerThumbnail: true,
                     mentionedJid: [m.sender]
@@ -59,7 +59,7 @@ await conn.sendMessage(m.chat, {
  ptt: true, 
 seconds: 18,
 fileLength: 18,
- ptt: true, contextInfo: { forwardingScore: 999, isForwarded: false, externalAdReply: {title: 'ᴅɪᴇᴅᴇʀɪᴄʜ ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ', body: wm, sourceUrl: 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ', thumbnail: await (await fetch(thumb)).buffer(),}}  
+ ptt: true, contextInfo: { forwardingScore: 999, isForwarded: false, externalAdReply: {title: 'ᴅɪᴇᴅᴇʀɪᴄʜ ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ', body: wm, sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH', thumbnail: await (await fetch(thumb)).buffer(),}}  
   }) 
 }
 handler.help = ['botstatus']

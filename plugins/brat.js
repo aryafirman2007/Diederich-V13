@@ -17,7 +17,7 @@ PLUGIN INI PENDEK GAK USAH PANJANG-PANJANG😹
 BTW INI IMAGE YA BUKAN STICKER😹
 PLUGIN PENDEK INI DIBUAT OLEH RAPIKZ😹
 LINK CHNYA:
-https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ
+https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH
 */
 import { sticker } from '../lib/sticker.js'
 

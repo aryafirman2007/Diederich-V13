@@ -230,7 +230,7 @@ let p = await new canvafy.Security()
       body: `${ucapan()}`,
 renderLargerThumbnail: true,
       thumbnail: await (await fetch (`https://files.catbox.moe/y4e1ws.jpg`)).buffer(),
-      sourceUrl: 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ'     
+      sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH'     
 }}}, { quoted: fkon })
 
 let delay = time => new Promise(res => setTimeout(res, time))

@@ -117,7 +117,7 @@ await conn.sendMessage(m.chat, {
         title: 'MENU LIST DIEDERICH',
         body: 'D I E D E R I C H  M U L T I D E V I C E',
         thumbnailUrl: 'https://files.catbox.moe/kl6a82.jpg',
-        sourceUrl: 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ',
+        sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH',
         mediaType: 1,
         renderLargerThumbnail: true, 
       }
@@ -134,7 +134,7 @@ await conn.sendMessage(m.chat, {
         title: 'MENU LIST DIEDERICH',
         body: 'D I E D E R I C H  M U L T I D E V I C E',
         thumbnailUrl: 'https://telegra.ph/file/94b9d0b5ef233c97e00e1.jpg',
-        sourceUrl: 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ',
+        sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH',
         mediaType: 1,
         renderLargerThumbnail: true, 
         showAdAttribution: true

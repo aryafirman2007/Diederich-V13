@@ -7,52 +7,54 @@ import fs from "fs";
 import path from "path";
 
 let handler = async (m, { conn }) => {
-  const furryFolder = "./status";
+  const furryFolder = "./furry";
   const files = fs.readdirSync(furryFolder);
-  const randomFile = files[Math.floor(Math.random() * files.length)];
-  let url;
 
-  if (randomFile) {
-    url = path.join(furryFolder, randomFile);
-  } else {
-    // Fallback in case no file is found
-    url = furry[Math.floor(Math.random() * furry.length)];
+  if (files.length === 0) {
+    return conn.reply(m.chat, "Folder 'furry' kosong. Pastikan ada file media di dalamnya.", m);
   }
 
-  if (!url.startsWith("http")) {
-    // Convert local path to URL
-    url = `${path.resolve(url)}`;
-  }
+  for (let i = 0; i < 10; i++) {
+    const randomFile = files[Math.floor(Math.random() * files.length)];
+    let url;
 
-  let mediaType = url.endsWith(".mp4") ? "video" : "image";
-  let media = await prepareWAMessageMedia(
-    { [mediaType]: { url: url } },
-    { upload: conn.waUploadToServer },
-  );
+    if (randomFile) {
+      url = path.join(furryFolder, randomFile);
+    } else {
+      // Fallback in case no file is found
+      url = furry[Math.floor(Math.random() * furry.length)];
+    }
 
-  let message = generateWAMessageFromContent(
-    m.chat,
-    proto.Message.fromObject({
-      viewOnceMessage: {
-        message: {
-          imageMessage: {
-            ...media.imageMessage,
+    if (!url.startsWith("http")) {
+      // Convert local path to URL
+      url = `${path.resolve(url)}`;
+    }
+
+    let mediaType = url.endsWith(".mp4") ? "video" : "image";
+    let media = await prepareWAMessageMedia(
+      { [mediaType]: { url: url } },
+      { upload: conn.waUploadToServer }
+    );
+
+    let message = generateWAMessageFromContent(
+      m.chat,
+      proto.Message.fromObject({
+        viewOnceMessage: {
+          message: {
+            [`${mediaType}Message`]: {
+              ...media[`${mediaType}Message`],
+            },
           },
-          videoMessage: {
-            ...media.videoMessage,
-          }
-        }
-      },
-    }),
-    { quoted: m },
-  );
+        },
+      }),
+      { quoted: m }
+    );
 
-  await conn.relayMessage(m.chat, message.message, {});
+    await conn.relayMessage(m.chat, message.message, {});
+  }
 };
 
-handler.help = ["nsfw"];
+handler.help = ["asupan"];
 handler.tags = ["nsfw"];
-handler.command = /^(statuswa)$/i;
-handler.owner = true
-handler.mods = true;
+handler.command = /^(asupan)$/i;
 export default handler;

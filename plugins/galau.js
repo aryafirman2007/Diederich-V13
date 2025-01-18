@@ -10,7 +10,7 @@ showAdAttribution: true,
 title: `ɢ ᴀ ʟ ᴀ ᴜ`,
 body: '2024 © ᴅɪᴇᴅᴇʀɪᴄʜ',
 thumbnailUrl: thumb, 
-sourceUrl: "https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ",
+sourceUrl: "https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH",
 mediaType: 1,
 renderLargerThumbnail: true
 }}}, { quoted: m})

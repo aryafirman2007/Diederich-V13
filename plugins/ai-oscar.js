@@ -9,7 +9,7 @@ text: `${gyh.result}`,
         title: "Oscar AI",
         body: "O S C A R  L A W R E N C E",
         thumbnailUrl: "https://t.vndb.org/ch/70/118570.jpg",
-        sourceUrl: "https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ",
+        sourceUrl: "https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH",
         mediaType: 1,
         renderLargerThumbnail: false, 
         showAdAttribution: true

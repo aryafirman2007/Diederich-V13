@@ -6,14 +6,29 @@ import "@bochilteam/scraper";
 import fs from "fs";
 import path from "path";
 
+function getAllFiles(folderPath) {
+  let files = [];
+  const items = fs.readdirSync(folderPath, { withFileTypes: true });
+  for (const item of items) {
+    const fullPath = path.join(folderPath, item.name);
+    if (item.isDirectory()) {
+      // Recursive call to read files in subdirectories
+      files = files.concat(getAllFiles(fullPath));
+    } else {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
+
 let handler = async (m, { conn }) => {
   const furryFolder = "./furry";
-  const files = fs.readdirSync(furryFolder);
+  const files = getAllFiles(furryFolder); // Get all files including from subdirectories
   const randomFile = files[Math.floor(Math.random() * files.length)];
   let url;
 
   if (randomFile) {
-    url = path.join(furryFolder, randomFile);
+    url = randomFile;
   } else {
     // Fallback in case no file is found
     url = furry[Math.floor(Math.random() * furry.length)];
@@ -35,13 +50,9 @@ let handler = async (m, { conn }) => {
     proto.Message.fromObject({
       viewOnceMessage: {
         message: {
-          imageMessage: {
-            ...media.imageMessage,
-          },
-          videoMessage: {
-            ...media.videoMessage,
-          }
-        }
+          imageMessage: mediaType === "image" ? { ...media.imageMessage } : undefined,
+          videoMessage: mediaType === "video" ? { ...media.videoMessage } : undefined,
+        },
       },
     }),
     { quoted: m },

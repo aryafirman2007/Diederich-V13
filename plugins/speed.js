@@ -90,7 +90,7 @@ showAdAttribution: true,
 title: ``,
 body: 'I N F O  P I N G  D I E D E R I C H',
 thumbnailUrl: 'https://files.catbox.moe/0unuid.jpg',
-sourceUrl: "https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ",
+sourceUrl: "https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH",
 mediaType: 1,
 renderLargerThumbnail: true
 }}}, { quoted: i})

@@ -12,7 +12,7 @@ let msg = await generateWAMessageFromContent(m.chat, { locationMessage: {
   degreesLongitude: 0,
   name: `ᴘᴇɴᴄᴇᴛ ᴛᴜʟɪsᴀɴ ɪɴɪ`,
   address: `🐾 ᴅᴏɴᴀᴛᴇ 🐾`,
-  url: 'https://linktr.ee/ArFur117',
+  url: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH',
   isLive: true,
   accuracyInMeters: 0,
   speedInMps: 0,

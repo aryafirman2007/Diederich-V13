@@ -20,7 +20,7 @@ let handler = async (m, { conn, text }) => {
     let completed = 0;
 
     for (let participant of participants) {
-        await delay(2000); // Menunggu 2 detik sebelum mengirim ke peserta berikutnya
+        await delay(500); // Menunggu 2 detik sebelum mengirim ke peserta berikutnya
         try {
             await conn.sendMessage(participant, { text: pesan });
             completed++;

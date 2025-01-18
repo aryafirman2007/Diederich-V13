@@ -9,7 +9,7 @@ text: `${gyh.result}`,
         title: "Theo AI",
         body: "T H E O  P R I N Z  V O N  H I R S C H R E I C H",
         thumbnailUrl: "https://t.vndb.org/ch/71/118571.jpg",
-        sourceUrl: "https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ",
+        sourceUrl: "https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH",
         mediaType: 1,
         renderLargerThumbnail: false, 
         showAdAttribution: true

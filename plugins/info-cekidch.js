@@ -2,7 +2,7 @@
 `PLUGIN CEK ID CHANNEL SUPPORT ALL BAILEYS`
 Kode ini dibuat oleh Rapikz😹
 FOLLOW CHANNEL:
-1. https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ
+1. https://whatsapp.com/channel/0029VaoJb11LikgEpNpBty0e
 2. CH lu
 Note: 
 - Daripada Hapus link CH mending tambahin😹 

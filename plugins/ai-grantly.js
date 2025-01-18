@@ -9,7 +9,7 @@ text: `${gyh.result}`,
         title: "Grantly AI",
         body: "G R A N T L Y  B E L L",
         thumbnailUrl: "https://t.vndb.org/ch/69/118569.jpg",
-        sourceUrl: "https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ",
+        sourceUrl: "https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH",
         mediaType: 1,
         renderLargerThumbnail: false, 
         showAdAttribution: true

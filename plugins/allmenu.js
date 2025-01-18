@@ -173,14 +173,14 @@ const defaultMenu = {
                     forwardingScore: 2023,
                     title: 'ᴍ ᴇ ɴ ᴜ  ʙ ᴏ ᴛ  ᴅ ɪ ᴇ ᴅ ᴇ ʀ ɪ ᴄ ʜ',
                     thumbnailUrl: 'https://files.catbox.moe/y4e1ws.jpg',
-                    sourceUrl: 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ',
+                    sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH',
                     mediaType: 1,
                     renderLargerThumbnail: true,
                     mentionedJid: [m.sender]
                      }}}, { quoted: memek })
                      await conn.sendFile(m.chat, apalah, 'menu.mp3', null, m, true, {
  type: 'audioMessage',  
- ptt: true, contextInfo: { forwardingScore: 999, isForwarded: false, externalAdReply: {title: 'ᴅɪᴇᴅᴇʀɪᴄʜ ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ', body: wm, sourceUrl: 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ', thumbnail: await (await fetch(bjir)).buffer(),}}  
+ ptt: true, contextInfo: { forwardingScore: 999, isForwarded: false, externalAdReply: {title: 'ᴅɪᴇᴅᴇʀɪᴄʜ ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ', body: wm, sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH', thumbnail: await (await fetch(bjir)).buffer(),}}  
   }) 
     } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)

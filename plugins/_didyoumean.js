@@ -6,28 +6,37 @@ let handler = m => m;
 handler.before = function (m, { match, usedPrefix }) {
   if ((usedPrefix = (match[0] || '')[0])) {
     let noPrefix = m.text.replace(usedPrefix, '').trim();
-    let alias = Object.values(global.plugins).filter(v => v.help && !v.disabled).map(v => v.help).flat(1);
+    let alias = Object.values(global.plugins)
+      .filter(v => v.help && !v.disabled)
+      .map(v => v.help)
+      .flat(1);
     let mean = didyoumean(noPrefix, alias);
     let sim = similarity(noPrefix, mean);
-    let similarityPercentage = parseInt(sim * 100);      
+    let similarityPercentage = parseInt(sim * 100);
 
     if (mean && noPrefix.toLowerCase() !== mean.toLowerCase()) {
-      let response = `• ᴀᴘᴀᴋᴀʜ ᴋᴀᴍᴜ ᴍᴇɴᴄᴀʀɪ ᴍᴇɴᴜ ʙᴇʀɪᴋᴜᴛ ɪɴɪ?\n\n◦ ɴᴀᴍᴀ ᴄᴏᴍᴍᴀɴᴅ: ➠ *${usedPrefix + mean}*\n◦ ʜᴀsɪʟ ᴋᴇᴍɪʀɪᴘᴀɴ: ➠ *${similarityPercentage}%*`;
+      let response = `• Apakah kamu mencari menu berikut ini?\n\n◦ Nama Command: ➠ *${usedPrefix + mean}*\n◦ Hasil Kemiripan: ➠ *${similarityPercentage}%*`;
 
-      this.reply(m.chat, response, m, {
-        contextInfo: {
-          externalAdReply: {
-       	showAdAttribution: true,
-            title: 'D I D Y O U M E A N',
-            thumbnailUrl: 'https://files.catbox.moe/vfkjca.jpg',
-            sourceUrl: 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ',
-            mediaType: 1,
-            renderLargerThumbnail: true
-                     }
-        }
-      });
+      conn.sendMessage(
+        m.key.remoteJid,
+        {
+          image: { url: "https://files.catbox.moe/vfkjca.jpg" },
+          caption: response,
+          footer: "Inikah?",
+          buttons: [
+            {
+              buttonId: `${usedPrefix + mean}`,
+              buttonText: { displayText: `Coba ${usedPrefix + mean}` },
+              type: 1,
+            },
+          ],
+          headerType: 1,
+          viewOnce: true,
+        },
+        { quoted: m }
+      );
     }
   }
-}
+};
 
 export default handler;

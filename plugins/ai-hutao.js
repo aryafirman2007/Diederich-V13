@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         title: 'Hutao - C.ai',
         body: 'D I E D E R I C H  M U L T I D E V I C E',
         thumbnailUrl: 'https://telegra.ph/file/7c8df67f6ae21ad094763.jpg',
-        sourceUrl: 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ',
+        sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH',
         mediaType: 1,
         renderLargerThumbnail: false, 
         showAdAttribution: true

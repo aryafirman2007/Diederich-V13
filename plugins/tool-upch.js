@@ -1,7 +1,7 @@
 /*
 `PLUGIN UPLOAD KE CHANNEL ALL MEDIA`
 FOLLOW CHANNEL:
-1. https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ
+1. https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH
 2. link CH Lu
 
 Catatan:
@@ -18,7 +18,7 @@ import fetch from 'node-fetch'
 
 let handler = async (m) => {
 conn.sendMessage(m.chat, { react: { text: "⏳", key: m.key } });
-let idch = '120363318498252170@newsletter'// ISI SAMA ID CHANNEL KALIAN
+let idch = '120363385425019026@newsletter'// ISI SAMA ID CHANNEL KALIAN
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 let name = await conn.getName(who)
