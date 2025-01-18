@@ -27,6 +27,7 @@ import sys
 import threading
 import timeit
 import xml.parsers.expat
+from datetime import datetime, timezone
 
 try:
     import gzip
@@ -956,7 +957,7 @@ class SpeedtestResults(object):
         self.client = client or {}
 
         self._share = None
-        self.timestamp = '%sZ' % datetime.datetime.utcnow().isoformat()
+        self.timestamp = '%sZ' % datetime.now(timezone.utc).isoformat()
         self.bytes_received = 0
         self.bytes_sent = 0
 

@@ -26,8 +26,8 @@ let wibh = moment.tz('Asia/Jakarta').format('HH')
 /*============== SOCIAL ==============*/
 global.sig = 'https://instagram.com/arfur_117' //instagram
 global.sgh = 'https://github.com/' //github
-global.sgc = 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ' //group whatsapp
-global.saluran = 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ' //saluran whatsapp
+global.sgc = 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH' //group whatsapp
+global.saluran = 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH' //saluran whatsapp
 global.syt = 'https://www.youtube.com/@arfur_117' //youtube
 global.swa = 'https://wa.me/6283129627886' //whatsapp
 global.tele = 'https://t.me/arfur117' //telegram
