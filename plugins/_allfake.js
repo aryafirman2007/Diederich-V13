@@ -67,7 +67,7 @@ handler.all = async function (m) {
 					description: 'ᴅɪᴇᴅᴇʀɪᴄʜ-ᴀɪ', 
 					previewType: "PHOTO",
 					thumbnail: await (await fetch(pic)).buffer(),
-					sourceUrl: 'https://chat.whatsapp.com/LPBLUJReYnIHkkjv8aiPKQ'			
+					sourceUrl: 'https://linktr.ee/ArFur117'			
 				}
 			}
 		}
