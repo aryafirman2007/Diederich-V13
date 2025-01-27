@@ -238,7 +238,7 @@ async function connectionUpdate(_0x29c1c1) {
   }
   if (_0x565367 == "open") {
     conn.sendMessage("6283129627886@s.whatsapp.net", {
-      'text': "- BOT DIEDERICH AKTIF\n\nSCRIPT BOT INI MILIK ARGO!!!!!\n\nJANGAN LUPA MASUK GC ARGO👇\nhttps://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH"
+      'text': "- BOT DIEDERICH AKTIF\n\nSCRIPT BOT INI MILIK ARGO!!!!!\n\nJANGAN LUPA MASUK GC ARGO👇\nhttps://chat.whatsapp.com/LnEShOfN7fF6xL62EAUuG9"
     });
   }
   if (_0x565367 == "close") {
