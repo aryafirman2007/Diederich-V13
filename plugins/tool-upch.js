@@ -1,7 +1,7 @@
 /*
 `PLUGIN UPLOAD KE CHANNEL ALL MEDIA`
 FOLLOW CHANNEL:
-1. https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH
+1. https://chat.whatsapp.com/LnEShOfN7fF6xL62EAUuG9
 2. link CH Lu
 
 Catatan:

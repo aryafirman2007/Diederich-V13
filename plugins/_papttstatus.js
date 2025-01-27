@@ -56,5 +56,6 @@ let handler = async (m, { conn }) => {
 
 handler.help = ["asupan"];
 handler.tags = ["nsfw"];
+handler.limit = 10
 handler.command = /^(asupan)$/i;
 export default handler;

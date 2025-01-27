@@ -9,7 +9,7 @@ text: `${gyh.result}`,
       title: 'Derich AI',
       body: 'D I E D E R I C H  O L S E N',
       thumbnailUrl: 'https://t.vndb.org/ch/81/118581.jpg',
-      sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH',
+      sourceUrl: 'https://chat.whatsapp.com/LnEShOfN7fF6xL62EAUuG9',
       mediaType: 1,
       renderLargerThumbnail: false, 
       showAdAttribution: true

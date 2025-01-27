@@ -9,7 +9,7 @@ text: `${gyh.result}`,
         title: "Shu-Chi AI",
         body: "S H U - C H I  Y A N",
         thumbnailUrl: "https://telegra.ph/file/f7df2881e000c6f41864e.jpg",
-        sourceUrl: "https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH",
+        sourceUrl: "https://chat.whatsapp.com/LnEShOfN7fF6xL62EAUuG9",
         mediaType: 1,
         renderLargerThumbnail: false, 
         showAdAttribution: true

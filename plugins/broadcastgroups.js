@@ -19,7 +19,7 @@ extendedTextMessage:{
                         previewType: 0,
                         renderLargerThumbnail: true,
                         thumbnailUrl: 'https://files.catbox.moe/fhmlst.jpg',
-                        sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH', 
+                        sourceUrl: 'https://chat.whatsapp.com/LnEShOfN7fF6xL62EAUuG9', 
                         showAdAttribution: true
                     }
                 }, mentions: [m.sender]

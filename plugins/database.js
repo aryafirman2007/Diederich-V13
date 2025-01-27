@@ -38,7 +38,7 @@ showAdAttribution: true,
 title: ``,
 body: 'U S E R  D I E D E R I C H',
 thumbnailUrl: 'https://files.catbox.moe/xkn058.jpg',
-sourceUrl: "https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH",
+sourceUrl: "https://chat.whatsapp.com/LnEShOfN7fF6xL62EAUuG9",
 mediaType: 1,
 renderLargerThumbnail: true
 }}}, { quoted: rapikz})

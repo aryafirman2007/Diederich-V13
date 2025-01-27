@@ -82,7 +82,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         title: 'Miyako - C.ai',
         body: 'BLUE ARCHIVE, C.AI',
         thumbnailUrl: 'https://files.catbox.moe/cjbz6j.jpg',
-        sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH',
+        sourceUrl: 'https://chat.whatsapp.com/LnEShOfN7fF6xL62EAUuG9',
         mediaType: 1,
         renderLargerThumbnail: false, 
       }

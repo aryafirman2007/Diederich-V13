@@ -45,7 +45,7 @@ ${link}
     title: '',
     body: 'D I E D E R I C H  M U L T I D E V I C E', 
     thumbnailUrl: 'https://files.catbox.moe/txmtin.jpg', 
-    sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH',
+    sourceUrl: 'https://chat.whatsapp.com/LnEShOfN7fF6xL62EAUuG9',
     renderLargerThumbnail: true, 
     showAdAttribution: true
     }}}, { quoted: alok})

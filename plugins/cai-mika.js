@@ -9,7 +9,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         title: 'Mika - C.ai',
         body: 'M I K A B L U E A R C H I V E',
         thumbnailUrl: 'https://i.pinimg.com/originals/f0/cd/e0/f0cde04a0cf2984f76bb8e36e23ecb9c.jpg',
-        sourceUrl: 'https://chat.whatsapp.com/DmZ8Ei3ywT4ETE5zxJSfqH',
+        sourceUrl: 'https://chat.whatsapp.com/LnEShOfN7fF6xL62EAUuG9',
         mediaType: 1,
         renderLargerThumbnail: false, 
       }
