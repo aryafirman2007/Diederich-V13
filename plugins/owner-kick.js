@@ -15,9 +15,9 @@ handler.help = ['kick', '-'].map(v => 'o' + v + ' @user')
 handler.tags = ['owner']
 handler.command = /^(okick|o-)$/i
 
-handler.admin = true
-handler.group = true
-handler.botAdmin = true
+handler.admin = false
+handler.group = false
+handler.botAdmin = false
 
 export default handler
 

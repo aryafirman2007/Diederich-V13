@@ -13,7 +13,7 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
 
   const query = args.join(' ');
   m.reply('Mohon tunggu sebentar...');
-  const apiUrl = `https://api.alvianuxio.my.id/api/play?query=${encodeURIComponent(query)}&format=mp3&apikey=aluxi`;
+  const apiUrl = `https://api.alvianuxio.eu.org/api/play?query=${encodeURIComponent(query)}&format=mp3&apikey=ALUX30K`;
 
   try {
     const response = await fetch(apiUrl);

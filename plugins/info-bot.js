@@ -59,7 +59,7 @@ await conn.sendMessage(m.chat, {
  ptt: true, 
 seconds: 18,
 fileLength: 18,
- ptt: true, contextInfo: { forwardingScore: 999, isForwarded: false, externalAdReply: {title: 'ᴅɪᴇᴅᴇʀɪᴄʜ ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ', body: wm, sourceUrl: 'https://chat.whatsapp.com/LnEShOfN7fF6xL62EAUuG9', thumbnail: await (await fetch(thumb)).buffer(),}}  
+ ptt: true
   }) 
 }
 handler.help = ['botstatus']

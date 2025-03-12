@@ -1,57 +1,80 @@
-import { instagramdl } from '@bochilteam/scraper';
-import fetch from 'node-fetch';
-
-var handler = async (m, { args, conn, usedPrefix, command }) => {
-    if (!args[0]) throw `Ex:\n${usedPrefix}${command} https://www.instagram.com/reel/C0EEgMNSSHw/?igshid=MzY1NDJmNzMyNQ==`;
+// Don't delete this credit!!!
+// Script by ShirokamiRyzen
+ 
+import axios from 'axios'
+ 
+let handler = async (m, { conn, args }) => {
+    if (!args[0]) throw 'Please provide an Instagram video URL';
+    const sender = m.sender.split('@')[0];
+    const url = args[0];
+ 
+    m.reply(wait);
+ 
     try {
-        let res = await bochil.snapsave(args[0]);
-        let media = await res[0].url;
-      
-        const sender = m.sender.split(`@`)[0];
-
-        conn.reply(m.chat, 'Sedang mengunduh video...', m);
-
-        if (!res) throw 'Can\'t download the post';
-      
-        await conn.sendMessage(m.chat, { video: { url: media }, caption: `ini kak videonya @${sender}`, mentions: [m.sender]}, m);
-      
-      await conn.sendMessage(m.chat, { 
-        document: { url: media }, 
-        mimetype: 'video/mp4', 
-        fileName: `instagram.mp4`,
-        caption: `ini kak videonya @${sender} versi dokumen, agar jernih`, mentions: [m.sender]
-      }, {quoted: m})
-
-    } catch (e) {
-      try {
-          let response = await fetch(`https://tr.deployers.repl.co/instagramdl?url=${encodeURIComponent(args[0])}`);
-          let data = await response.json();
-
-          if (data.image && data.video) {
-              const sender = m.sender.split(`@`)[0];
-
-              conn.reply(m.chat, 'Sedang mengunduh video...', m);
-
-            await conn.sendMessage(m.chat, { video: data.video, caption: `ini kak videonya @${sender}`, mentions: [m.sender] }, m);
-
-            await conn.sendMessage(m.chat, { 
-              document: { url: data.video }, 
-              mimetype: 'video/mp4', 
-              fileName: `instagram.mp4`,
-              caption: `ini kak videonya @${sender} versi dokumen, agar jernih`, mentions: [m.sender]
-            }, {quoted: m})
-            
-          } else {
-              throw 'Gagal mengunduh video';
-          }
-      } catch (error) {
-          conn.reply(m.chat, 'Gagal mengunduh video', m);
-      }
+        const { data } = await axios.get(`https://api.ryzendesu.vip/api/downloader/igdl?url=${encodeURIComponent(url)}`);
+        
+        if (!data.status || !data.data || data.data.length === 0) {
+            throw 'No available media found';
+        }
+ 
+        const mediaData = data.data;
+        const videos = mediaData.filter(item => item.url.includes('rapidcdn.app'));
+        const images = mediaData.filter(item => item.url.includes('cdninstagram.com'));
+ 
+        if (videos.length > 0) {
+            const videoUrl = videos[0].url;
+            const videoBuffer = await fetch(videoUrl).then(res => res.buffer());
+            const caption = `Ini kak videonya @${sender}`;
+ 
+            await conn.sendMessage(
+                m.chat, {
+                    video: videoBuffer,
+                    mimetype: "video/mp4",
+                    fileName: `video.mp4`,
+                    caption: caption,
+                    mentions: [m.sender],
+                }, {
+                    quoted: m
+                }
+            );
+        } else if (images.length > 0) {
+            let firstImage = true;
+            for (const item of images) {
+                try {
+                    const imageUrl = item.url;
+                    const imageBuffer = await fetch(imageUrl).then(res => res.buffer());
+                    const caption = firstImage ? `Ini kak gambarnya @${sender}` : '';
+                    firstImage = false;
+ 
+                    await conn.sendMessage(
+                        m.chat, {
+                            image: imageBuffer,
+                            caption: caption,
+                            mentions: [m.sender]
+                        }, {
+                            quoted: m
+                        }
+                    );
+                } catch (error) {
+                    console.error('Error sending image:', error);
+                    await conn.reply(m.chat, `Gagal mengirim gambar: ${error.message}`, m);
+                }
+            }
+        } else {
+            throw 'No available media found';
+        }
+    } catch (error) {
+        console.error('Handler Error:', error);
+        conn.reply(m.chat, `An error occurred: ${error}`, m);
     }
-};
-
-handler.help = ['instagram'];
+}
+ 
+handler.help = ['ig'].map(v => v + ' <url>');
 handler.tags = ['downloader'];
-handler.command = /^(ig(dl)?|instagram(dl)?)$/i;
-
-export default handler;
+handler.command = /^(ig(dl)?)$/i;
+ 
+handler.limit = true
+handler.register = true
+ 
+export default handler
+ 
