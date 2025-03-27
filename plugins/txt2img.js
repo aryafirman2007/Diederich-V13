@@ -1,15 +1,80 @@
-import fetch from 'node-fetch'
+/*
+Jangan Hapus Wm Bang 
 
-let handler = async (m, { conn, text, usedPrefix }) => {
-    if (!text) return m.reply("Textnya?");
-    conn.sendMessage(m.chat, { react: { text: "⏳", key: m.key } });
-	let urls = `https://btch.us.kg/ai/text2img?text=${text}`
-	let url = urls
-	await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key }})
-	conn.sendFile(m.chat, url, null, `hasil txt2img dari ${text}`, m)
+*Text2img Plugins Esm*
+
+Folow Bantu 600p
+
+*[Sumber]*
+https://whatsapp.com/channel/0029Vb3u2awADTOCXVsvia28
+
+*[Sumber Scrape]*
+
+https://whatsapp.com/channel/0029VafnytH2kNFsEp5R8Q3n/303
+*/
+
+import axios from 'axios';
+import cheerio from 'cheerio';
+import translate from 'bing-translate-api';
+
+const BASE_URL = "https://www.texttoimage.org";
+
+const headers = {
+  "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+  Origin: "https://www.texttoimage.org",
+  Referer: "https://www.texttoimage.org/",
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+};
+
+async function text2img(prompt) {
+  if (!prompt) return "Where is the prompt param?";
+  try {
+    let q = new URLSearchParams({
+      prompt,
+    });
+    let { data } = await axios.post(`${BASE_URL}/generate`, q, {
+      headers,
+    });
+    let html = await axios.get(`${BASE_URL}/${data.url}`, { headers });
+    const $ = cheerio.load(html.data);
+    let result = BASE_URL + $(".image-container").find("img").attr("src");
+    return {
+      status: true,
+      result,
+    };
+  } catch (e) {
+    return {
+      status: false,
+      result: "An error occurred! Server down."
+    };
+  }
 }
-handler.help = ['txt2img']
-handler.tags = ['ai']
-handler.command = /^(txt2img)$/i
-handler.premium = false
-export default handler
+
+const handler = async (m, { conn, text }) => {
+  if (!text) return m.reply('Mau Buat Gambar Apa?\n\n *Example Use :* .texttoimg pemandangan indah dengan pegunungan');
+  
+  m.reply('Processing the image. Please wait a moment.');
+  
+  try {
+    const translatedText = await translate.translate(text, 'id', 'en');
+
+    const response = await text2img(translatedText.translation);
+    
+    if (response.status) {
+      await conn.sendMessage(m.chat, { 
+        image: { url: response.result },
+      }, { quoted: m });
+    } else {
+      m.reply(`Failed to generate image: ${response.result}`);
+    }
+  } catch (error) {
+    m.reply('An error occurred while processing your request.');
+  }
+};
+
+handler.help = ['texttoimg <prompt>'];
+handler.command = ['texttoimg', 'text2img', 'aiimg', 'txt2img'];
+handler.tags = ['ai', 'tools'];
+
+export default handler;

@@ -1,72 +1,87 @@
-import fetch from 'node-fetch';
+/*
+- Fitur: MediaFire Downloader
+- Info: Mengunduh file dari link MediaFire.
+- Type: Plugins `ESM` & `CJS`
+- Recode By: SkyWalker
+- [ `Sumber` ]
+- https://whatsapp.com/channel/0029Vb1NWzkCRs1ifTWBb13u
+- [ `Sumber Utama` ]
+- https://whatsapp.com/channel/0029VakRR89L7UVPwf53TB0v
+*/
+
+// Import untuk ESM
+import fetch from 'node-fetch'
+import cheerio from 'cheerio'
+
+// Import untuk CJS
+// const fetch = require('node-fetch')
+// const cheerio = require('cheerio')
 
 let handler = async (m, { conn, text }) => {
-    if (!text) return m.reply('Please provide a MediaFire link!');
+    conn.mediafire = conn.mediafire || {}
+
+    if (m.sender in conn.mediafire) throw "❗ Masih ada proses yang belum selesai. Silakan tunggu."
+
+    if (!text) throw "❗ Masukkan link MediaFire yang ingin diunduh."
+
+    conn.mediafire[m.sender] = true
+    await conn.sendMessage(m.chat, { react: { text: "🌀", key: m.key } })
 
     try {
-        const response = await fetch(`https://api.agatz.xyz/api/mediafire?url=${text}`);
-        const result = await response.json();
+        let result = await mediafireDownloader(text)
 
-        if (result.status === 200) {
-            const file = result.data[0];
-            const mime = file.mime;
+        if (!result.url) throw "❌ Gagal mendapatkan link unduhan."
 
-            let caption = `*File Name:* ${file.nama}\n*Size:* ${file.size}\n\nDownloading...`;
+        let caption = `✅ *Berhasil mengunduh file dari MediaFire!*\n\n`
+            + `📂 *Nama File:* ${result.filename}\n`
+            + `📦 *Ukuran:* ${result.size}\n`
+            + `📅 *Tanggal Unggah:* ${result.date}\n`
+            + `⏰ *Waktu Unggah:* ${result.time}\n`
+            + `🌍 *Diupload dari:* ${result.from}\n\n`
+            + `🔗 *Link:* ${result.url}`
 
-            await conn.sendMessage(m.chat, { text: caption }, m);
-            await conn.sendMessage(m.chat, { document: { url: file.link }, mimetype: mime, fileName: file.nama }, m);
-        } else {
-            m.reply('Failed to fetch the MediaFire link. Please try again.');
-        }
+        await conn.sendMessage(m.chat, { react: { text: "✅", key: m.key } })
+        await conn.sendMessage(m.chat, {
+            document: { url: result.url },
+            mimetype: 'application/octet-stream',
+            fileName: result.filename,
+            caption: caption
+        }, { quoted: m })
     } catch (error) {
-        console.error(error);
-        m.reply('An error occurred while fetching the download link.');
+        await conn.sendMessage(m.chat, { react: { text: "❌", key: m.key } })
+        m.reply(`❌ *Gagal mengunduh file:* ${error.message}`)
     }
-};
 
-handler.help = ['mediafire'];
-handler.tags = ['download'];
-handler.command = /^(mf|mediafire|md)$/i;
-
-export default handler;
-
-/*
-import fetch from 'node-fetch'
-
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) throw `MASUKAN LINK!!!\n*Contoh:* ${usedPrefix}${command} https://www.mediafire.com/file/2v2x1p0x58qomva/WhatsApp_Messenger_2.24.21.8_beta_By_WhatsApp_LLC.apk/file`;
-conn.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
-	let ouh = await fetch(`https://btch.us.kg/mediafire?link=${text}`)
-  let gyh = await ouh.json()
-	await conn.sendFile(m.chat, gyh.result.url, `${gyh.result.filename}`, `*💌 Name:* ${gyh.result.filename}\n*📊 Size:* ${gyh.result.filesizeH}\n*🗂️ Extension:* ${gyh.result.ext}\n*📨 Uploaded:* ${gyh.result.upload_date}`, m)
-	await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key }})
+    delete conn.mediafire[m.sender]
 }
-handler.help = ['mediafire']
-handler.tags = ['downloader']
-handler.command = /^(mediafire|mf)$/i
-handler.premium = false
-handler.register = true
-export default handler
-*/
 
-/*
-import { mediafiredl } from '@bochilteam/scraper'
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) throw `Use example ${usedPrefix}${command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`
-    let res = await mediafiredl(args[0])
-    let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
-    let caption = `
-*💌 Name:* ${filename}
-*📊 Size:* ${filesizeH}
-*🗂️ Extension:* ${ext}
-*📨 Uploaded:* ${aploud}
-`.trim()
-    m.reply(caption)
-    await conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: ext, asDocument: true })
-}
-handler.help = ['mediafire'].map(v => v + ' <url>')
-handler.tags = ['downloader']
+handler.help = ["mediafire"]
+handler.tags = ["downloader"]
 handler.command = /^(mediafire|mf)$/i
 
 export default handler
-*/
+
+// Function Async di Bawah
+async function mediafireDownloader(url) {
+    const response = await fetch('https://r.jina.ai/' + url, {
+        headers: { 'x-return-format': 'html' }
+    })
+    if (!response.ok) throw new Error("Gagal mengambil data dari MediaFire!")
+
+    const textHtml = await response.text()
+    const $ = cheerio.load(textHtml)
+    const TimeMatch = $('div.DLExtraInfo-uploadLocation div.DLExtraInfo-sectionDetails')
+        .text()
+        .match(/This file was uploaded from (.*?) on (.*?) at (.*?)\n/)
+
+    const fileSize = $('a#downloadButton').text().trim().split('\n')[0].trim()
+    return {
+        title: $('div.dl-btn-label').text().trim() || "Tidak diketahui",
+        filename: $('div.dl-btn-label').attr('title') || "file",
+        url: $('a#downloadButton').attr('href'),
+        size: fileSize || "Tidak diketahui",
+        from: TimeMatch?.[1] || "Tidak diketahui",
+        date: TimeMatch?.[2] || "Tidak diketahui",
+        time: TimeMatch?.[3] || "Tidak diketahui"
+    }
+}

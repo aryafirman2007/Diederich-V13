@@ -1,14 +1,52 @@
-import fetch from 'node-fetch'
+/*
+Jangan Hapus Wm Bang 
 
-let handler = async (m, { conn, text, usedPrefix }) => {
-    if (!text) return m.reply("Linknya?");
-    conn.sendMessage(m.chat, { react: { text: "⏳", key: m.key } });
-	let urls = `https://btch.us.kg/sspc?url=${text}`
-	conn.sendFile(m.chat, urls, null, `hasil SS web dari web ${text}`, m)
-	await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key }})
+*Ssweb [Full Page] Plugins Esm*
+
+Hmm
+
+*[Sumber]*
+https://whatsapp.com/channel/0029Vb3u2awADTOCXVsvia28
+
+*[Sumber Scrape]*
+
+https://whatsapp.com/channel/0029VabNTKm35fLp0YzUmH03/3553
+*/
+
+import axios from 'axios';
+
+async function Screenshot(url) {
+    try {
+        const response = await axios.get(`https://image.thum.io/get/png/fullpage/viewportWidth/2400/${url}`, {
+            responseType: 'arraybuffer'
+        });
+
+        return {
+            status: 200,
+            type: 'image/png',
+            buffer: response.data
+        };
+    } catch (err) {
+        throw Error(err.message);
+    }
 }
-handler.help = ['ssweb']
-handler.tags = ['internet']
-handler.command = /^(ssweb)$/i
-handler.premium = false
-export default handler
+
+let handler = async (m, { args, conn }) => {
+    if (!args[0]) return m.reply('Berikan Url Web Nya\n\n*Example :* .ssweb https://www.nasa.gov ');
+
+    try {
+        let result = await Screenshot(args[0]);
+
+        await conn.sendMessage(m.chat, { 
+            image: result.buffer
+        }, { quoted: m });
+    } catch (e) {
+        m.reply('Error');
+    }
+};
+
+handler.help = ['ssweb'];
+handler.command = ['ssweb'];
+handler.tags = ['tools']
+
+export default handler;
