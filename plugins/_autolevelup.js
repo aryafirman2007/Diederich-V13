@@ -318,7 +318,7 @@ export async function before(m) {
 			}
         image = await new canvafy.LevelUp()
     .setAvatar(pp)
-    .setBackground("image", "https://telegra.ph/file/2f2c737d63d0e62014701.jpg")
+    .setBackground("image", "https://i.ibb.co/C5JPBwbc/Whats-App-Image-2025-03-24-at-06-45-27-5074dc481.jpg")
     .setUsername(nama)
     .setBorder("#000000")
     .setAvatarBorder("#ff0000")
